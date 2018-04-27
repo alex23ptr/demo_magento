@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <AP_ModBanners>
+            <version>0.1.0</version>    
+        </AP_ModBanners>
+    </modules>
+	
+    <frontend>
+		<layout>
+            <updates>
+                <ap_modbanners>
+                    <file>ap_modbanners.xml</file>
+                </ap_modbanners>
+            </updates>
+        </layout>
+        <routers>
+            <ap_modbanners>
+                <use>standard</use>
+                <args>
+                    <module>AP_ModBanners</module>
+                    <frontName>banners</frontName>
+                </args>
+            </ap_modbanners>
+        </routers>
+    </frontend>
+	
+	<global>     
+       
+        <blocks>
+            <ap_modbanners_adminhtml>
+               <class>AP_ModBanners_Block_Adminhtml</class>
+            </ap_modbanners_adminhtml>
+			<ap_modbanners>
+               <class>AP_ModBanners_Block</class>
+            </ap_modbanners>
+        </blocks>        
+       
+        <helpers>
+            <ap_modbanners>
+                <class>AP_ModBanners_Helper</class>
+            </ap_modbanners>
+        </helpers>
+        <models>   
+            <ap_modbanners>               
+                <class>AP_ModBanners_Model</class>
+				<resourceModel>ap_modbanners_resource</resourceModel>                
+            </ap_modbanners>          
+            <ap_modbanners_resource>               
+                <class>AP_ModBanners_Model_Resource</class>                
+                <entities>  
+                    <banner>
+                        <table>ap_modbanners_banner</table>                        
+                    </banner>                    
+                </entities>                
+            </ap_modbanners_resource>            
+        </models>		
+		<resources>           
+            <ap_modbanners_setup>                
+                <setup>
+                    <module>AP_ModBanners</module>                    
+                    <class>Mage_Core_Model_Resource_Setup</class>                    
+                </setup>               
+                <connection>
+                    <use>core_setup</use>
+                </connection>                
+            </ap_modbanners_setup>            
+        </resources> 
+    </global>
+	
+	<admin>
+        <routers>     
+            <ap_modbanners_admin>  
+                <use>admin</use>                
+                <args>
+                   <module>AP_ModBanners_Adminhtml</module>  
+                   <frontName>modbanners-admin</frontName>
+                </args>                
+            </ap_modbanners_admin>            
+        </routers>
+    </admin>
+</config>

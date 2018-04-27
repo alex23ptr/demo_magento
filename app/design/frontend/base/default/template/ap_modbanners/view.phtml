@@ -1,0 +1,17 @@
+<?php $banner = $this->getCurrentBanner();    ?>
+<?php if ($banner): ?>
+    
+    <h1><?php echo $banner->getTitle(); ?></h1>
+	<div>
+		<img style="height:400px ;	" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).$banner->getImage_path(); ?>" title="<?php echo $banner->getTitle(); ?>" />
+	</div>
+		
+	<div>
+		<p><a href="<?php echo $this->helper('ap_modbanners/banner')->getBannerUrl($banner); ?>" title="<?php echo $this->escapeHtml($banner->getName()); ?>"><?php echo $banner->getTitle(); ?></a></p>
+		<?php echo $banner->getDescription(); ?>
+		<p><a href="<?php echo $this->getUrl('ap_modbanners/index/index') ?>" title="<?php echo $this->__('Back to banners list'); ?>"><?php echo $this->__('&laquo; Back to banners list'); ?></a></p>
+    </div>
+     
+    
+    
+<?php endif; ?>
