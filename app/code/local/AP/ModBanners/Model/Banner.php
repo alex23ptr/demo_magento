@@ -6,7 +6,7 @@ class AP_ModBanners_Model_Banner
     protected function _construct()
     {
         parent::_construct();
-        $this->_init('ap_modbanners/banner');
+        $this->_init('ap_modbanners/banner'); //auto
     }  
 	 
 }
